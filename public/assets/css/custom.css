@@ -1,0 +1,101 @@
+/*
+Template Name: Velzon - Admin & Dashboard Template
+Author: Themesbrand
+Website: https://themesbrand.com/
+Contact: support@themesbrand.com
+File: Custom Css File
+*/
+
+.custom-navbar{
+    width: max-content;
+    margin: auto;
+}
+
+.custom-topbar-icon{
+    border: 1px solid;
+}
+.custom-footer{
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+    left: 0;
+}
+.btc-address{
+    width: max-content;
+    padding: 10px 20px;
+    margin: auto;
+}
+
+.custom-shadow{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    width: max-content;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+.wishlist-shadow{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    background-color: #fff;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.purchase-table{
+    background-color: #fff;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 90%;
+}
+
+.page-content{
+    margin-bottom: 250px;
+}
+
+.invite-link{
+    border: 1px solid #cfcfcf;
+    width: 800px;
+    margin: auto;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.invite-shadow{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.creat-ticket-button{
+    position: relative;
+    bottom: 5px;
+}
+
+.become-vnd{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.landing-title{
+    display: contents;
+}
+
+.landing-description .card{
+    min-height: 200px;
+}
+
+.landingpage{
+    max-width: 1200px;
+    margin: auto;
+}
