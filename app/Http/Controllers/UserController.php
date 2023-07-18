@@ -40,16 +40,31 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
-        ]);
-    
-        User::create($request->all());
-     
-        return redirect()->route('users.index')
-                        ->with('success','User created successfully.');
+        // $request->validate([
+        //     'email' => 'required',
+        //     'userpassword' => 'required',
+        //     'confirmpassword' => 'required',
+        // ]);
+       
+        $userpassword = $request->input('userpassword');
+        $confirmpassword = $request->input('confirmpassword');
+        
+        echo "ok";
+
+        // if($userpassword==$confirmpassword){
+        //     // User::create($request->all());
+        
+        //     // return redirect()->route('users.index')
+        //     //                 ->with('success','User created successfully.');
+        //     echo "ok";
+        // }
+        // else{
+        //     return redirect()->route('users.create')
+        //                     ->with('success','Password is not matched.');
+        // }
+
     }
+
 
     /**
      * Display the specified resource.
