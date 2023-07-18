@@ -25,7 +25,7 @@ class LoginController extends Controller {
     
     public function postSignIn(SignInRequest $request){
         try{
-            // return $request -> persist();
+            return $request -> persist();
         } catch (RequestException $e){
             session() -> flash('errormessage', $e -> getMessage());
             return redirect()->back();
