@@ -14,7 +14,7 @@ Route::middleware(['guest'])->group(function () {
     Route::get('mnemonic/show', [RegisterController::class, 'showMnemonic'])->name('mnemonic');
 
     Route::get('/forgotpassword', [ForgotPasswordController::class, 'showForget']);
-    Route::get('/forgotpassowrd/mnemonic', [ForgotPasswordController::class, 'showMnemonic']);
+    Route::get('/forgotpassowrd/nemonic', [ForgotPasswordController::class, 'showMnemonic']);
     Route::get('/forgotpassword/pgp', [ForgotPasswordController::class, 'showPGP']);
 
     Route::post('/forgotpassword/mnemonic', [ForgotPasswordController::class, 'resetMnemonic']);
