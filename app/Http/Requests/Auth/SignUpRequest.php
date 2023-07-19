@@ -74,7 +74,7 @@ class SignUpRequest extends FormRequest {
         $publicKey =   $keyPair->getPublicKey();
         // encrypt private key with user's password
         $encryptedPrivateKey = Crypto::encryptWithPassword($privateKey, $this->password);
-
+        
         $mnemonic = (new Mnemonic())->generate(config('marketplace.mnemonic_length'));
 
         $user = new User();

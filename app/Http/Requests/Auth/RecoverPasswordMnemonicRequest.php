@@ -7,7 +7,7 @@ use App\Marketplace\Encryption\Keypair;
 use Defuse\Crypto\Crypto;
 use Illuminate\Foundation\Http\FormRequest;
 use App\User;
-use Hash;
+use Illuminate\Support\Facades\Hash;
 
 class RecoverPasswordMnemonicRequest extends FormRequest
 {
@@ -53,9 +53,7 @@ class RecoverPasswordMnemonicRequest extends FormRequest
             throw new RequestException('Could not find user with that username');
         }
         //check if mnemonics match
-        if (
-        !Hash::check(hash('sha256', $this->mnemonic), $user->mnemonic)
-        ) {
+        if (!Hash::check(hash('sha256', $this->mnemonic), $user->mnemonic)) {
             throw new RequestException('Mnemonic is not valid');
         }
 

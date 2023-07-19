@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.7",
         "php-parallel-lint/php-console-color": "^1.0",
         "placetopay/php-gnupg": "^0.2.0",
+        "singpolyma/openpgp-php": "^0.6.0",
         "webpatser/laravel-uuid": "^4.0"
     },
     "require-dev": {
