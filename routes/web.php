@@ -25,6 +25,8 @@ use App\Http\Controllers\IndexController;
 
 Route::get('/', [IndexController::class, 'home']);
 
+Route::get('/addcart', [IndexController::class, 'addCart'])->name('addcart');
+
 
 Route::name('auth.')->group(function () {
     include 'auth.php';

@@ -435,7 +435,7 @@
                                                         <span class="card-text mb-2">with mininum order 1 piece</span>
                                                     </div>
                                                     <div class="text-center">
-                                                        <a href="13-oe-productpage.html" class="btn btn-primary w-100">
+                                                        <a href="{{route('addcart')}}" class="btn btn-primary w-100">
                                                             Add to Cart <i class="ri-shopping-cart-line"></i>
                                                         </a>
                                                     </div>
@@ -458,7 +458,7 @@
                                                         <span class="card-text mb-2">with mininum order 1 piece</span>
                                                     </div>
                                                     <div class="text-center">
-                                                        <a href="13-oe-productpage.html" class="btn btn-primary w-100">
+                                                        <a href="{{route('addcart')}}" class="btn btn-primary w-100">
                                                             Add to Cart <i class="ri-shopping-cart-line"></i>
                                                         </a>
                                                     </div>
@@ -481,7 +481,7 @@
                                                         <span class="card-text mb-2">with mininum order 1 piece</span>
                                                     </div>
                                                     <div class="text-center">
-                                                        <a href="13-oe-productpage.html" class="btn btn-primary w-100">
+                                                        <a href="{{route('addcart')}}" class="btn btn-primary w-100">
                                                             Add to Cart <i class="ri-shopping-cart-line"></i>
                                                         </a>
                                                     </div>
@@ -504,7 +504,7 @@
                                                         <span class="card-text mb-2">with mininum order 1 piece</span>
                                                     </div>
                                                     <div class="text-center">
-                                                        <a href="13-oe-productpage.html" class="btn btn-primary w-100">
+                                                        <a href="{{route('addcart')}}" class="btn btn-primary w-100">
                                                             Add to Cart <i class="ri-shopping-cart-line"></i>
                                                         </a>
                                                     </div>
@@ -527,7 +527,7 @@
                                                         <span class="card-text mb-2">with mininum order 1 piece</span>
                                                     </div>
                                                     <div class="text-center">
-                                                        <a href="13-oe-productpage.html" class="btn btn-primary w-100">
+                                                        <a href="{{route('addcart')}}" class="btn btn-primary w-100">
                                                             Add to Cart <i class="ri-shopping-cart-line"></i>
                                                         </a>
                                                     </div>
@@ -551,7 +551,7 @@
                                                         <span class="card-text mb-2">with mininum order 1 piece</span>
                                                     </div>
                                                     <div class="text-center">
-                                                        <a href="13-oe-productpage.html" class="btn btn-primary w-100">
+                                                        <a href="{{route('addcart')}}" class="btn btn-primary w-100">
                                                             Add to Cart <i class="ri-shopping-cart-line"></i>
                                                         </a>
                                                     </div>
@@ -574,7 +574,7 @@
                                                         <span class="card-text mb-2">with mininum order 1 piece</span>
                                                     </div>
                                                     <div class="text-center">
-                                                        <a href="13-oe-productpage.html" class="btn btn-primary w-100">
+                                                        <a href="{{route('addcart')}}" class="btn btn-primary w-100">
                                                             Add to Cart <i class="ri-shopping-cart-line"></i>
                                                         </a>
                                                     </div>
@@ -597,7 +597,7 @@
                                                         <span class="card-text mb-2">with mininum order 1 piece</span>
                                                     </div>
                                                     <div class="text-center">
-                                                        <a href="13-oe-productpage.html" class="btn btn-primary w-100">
+                                                        <a href="{{route('addcart')}}" class="btn btn-primary w-100">
                                                             Add to Cart <i class="ri-shopping-cart-line"></i>
                                                         </a>
                                                     </div>

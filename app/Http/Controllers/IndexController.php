@@ -13,6 +13,7 @@ use App\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
+
 /**
  * Controller for all always public routes
  *
@@ -39,14 +40,9 @@ class IndexController extends Controller
         return view('welcome');
     }
 
-    /**
-     * Redirection to sing in
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function login() {
+    public function addCart() {
 
-        return redirect()->route('auth.signin');
+        return view('addcart');
     }
 
     // public function confirmation(Request $request) {
