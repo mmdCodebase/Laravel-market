@@ -29,5 +29,3 @@ Route::get('/', [IndexController::class, 'home']);
 Route::name('auth.')->group(function () {
     include 'auth.php';
 });
-
-Route::get('/signin', [IndexController::class, 'home']);
