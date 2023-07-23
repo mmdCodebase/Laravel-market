@@ -54,14 +54,21 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        // Add new middleware here
+        'verify_2fa' => \App\Http\Middleware\VerifyLogin::class,
+        'is_vendor' => \App\Http\Middleware\IsVendor::class,
+        'is_admin' => \App\Http\Middleware\IsAdmin::class,
+        'is_banned' => \App\Http\Middleware\IsBanned::class,
+        'admin_panel_access' => \App\Http\Middleware\HasAdminPanelAccess::class,
+        'can_read_messages' => \App\Http\Middleware\CanReadMessages::class,
+        'can_edit_products' => \App\Http\Middleware\CanEditProducts::class,
     ];
 }

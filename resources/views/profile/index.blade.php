@@ -19,15 +19,15 @@
         <div class="form-row my-2">
             <label for="new_password" class="col-form-label col-md-2">New password:</label>
             <div class="col-md-5">
-                <input type="password" class="form-control @error('new_password', $errors) is-invalid @enderror" id="new_password" name="new_password" placeholder="Type new password">
+                <input type="password" class="form-control @error('new_password') is-invalid @enderror" id="new_password" name="new_password" placeholder="Type new password">
             </div>
             <div class="col-md-5">
-                <input type="password" class="form-control @error('new_password', $errors) is-invalid @enderror" id="new_password_confirmation" name="new_password_confirmation" placeholder="Confirm new password">
+                <input type="password" class="form-control @error('new_password') is-invalid @enderror" id="new_password_confirmation" name="new_password_confirmation" placeholder="Confirm new password">
             </div>
         </div>
         <div class="form-row text-right justify-content-between">
             <div class="col-md-9 text-left">
-                @error('new_password', $errors)
+                @error('new_password')
                     <p class="invalid-feedback d-block">{{ $errors -> first('new_password') }}</p>
                 @enderror
             </div>

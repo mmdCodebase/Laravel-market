@@ -15,14 +15,14 @@
                     {{ csrf_field() }}
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Username" name="username" id="username">
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Username" name="username" id="username">
                         @error('username')
                             <p class="text-danger">{{$errors->first('username')}}</p>
                         @enderror
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" name="password"
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password"
                                id="password">
                         @error('password')
                         <p class="text-danger">{{$errors->first('password')}}</p>
