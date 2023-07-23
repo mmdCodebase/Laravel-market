@@ -9,6 +9,7 @@ use App\Marketplace\Encryption\Cipher;
 use App\Marketplace\Encryption\DecryptionKey;
 use App\Marketplace\Encryption\EncryptionKey;
 use App\Marketplace\Encryption\Keypair;
+use App\Marketplace\Utility\Captcha;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,7 +21,9 @@ class LoginController extends Controller {
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function showSignIn() {
-        return view('auth.signin');
+        return view('auth.signin')->with([
+            'captcha' => Captcha::build()
+        ]);
     }
     
     public function postSignIn(SignInRequest $request){

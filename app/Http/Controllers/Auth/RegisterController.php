@@ -15,9 +15,12 @@ class RegisterController extends Controller {
      * @param string $refid
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function showSignUp() {
+    public function showSignUp($refid = '') {
 
-        return view('auth.signup');
+        return view('auth.signup')->with([
+            'refid' => $refid,
+            'captcha' => Captcha::Build(),
+        ]);
     }
 
 
