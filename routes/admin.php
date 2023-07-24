@@ -1,65 +1,65 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\LogController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\BitmessageController;
 
-Route::get('index', 'Admin\AdminController@index') -> name('admin.index');
+Route::get('index', [AdminController::class, 'index'])->name('admin.index');
 
 // Categories routes
-Route::get('categories', 'Admin\AdminController@categories') -> name('admin.categories');
-Route::post('category/new', 'Admin\AdminController@newCategory') -> name('admin.categories.new');
-Route::get('category/delete/{id}', 'Admin\AdminController@removeCategory') -> name('admin.categories.delete');
-Route::get('category/{id}', 'Admin\AdminController@editCategoryShow') -> name('admin.categories.show');
-Route::post('category/{id}', 'Admin\AdminController@editCategory') -> name('admin.categories.edit');
+Route::get('categories', [AdminController::class, 'categories'])->name('admin.categories');
+Route::post('category/new', [AdminController::class, 'newCategory'])->name('admin.categories.new');
+Route::get('category/delete/{id}', [AdminController::class, 'removeCategory'])->name('admin.categories.delete');
+Route::get('category/{id}', [AdminController::class, 'editCategoryShow'])->name('admin.categories.show');
+Route::post('category/{id}', [AdminController::class, 'editCategory'])->name('admin.categories.edit');
 
 // Mass message routes
-Route::get('message', 'Admin\AdminController@massMessage') -> name('admin.messages.mass');
-Route::post('message/send', 'Admin\AdminController@sendMessage') -> name('admin.messages.send');
+Route::get('message', [AdminController::class, 'massMessage'])->name('admin.messages.mass');
+Route::post('message/send', [AdminController::class, 'sendMessage'])->name('admin.messages.send');
 
 // User routes
-Route::get('users','Admin\UserController@users')->name('admin.users');
-Route::post('users/query','Admin\UserController@usersPost')->name('admin.users.query');
-Route::get('users/{user?}','Admin\UserController@userView')->name('admin.users.view');
+Route::get('users', [UserController::class, 'users'])->name('admin.users');
+Route::post('users/query', [UserController::class, 'usersPost'])->name('admin.users.query');
+Route::get('users/{user?}', [UserController::class, 'userView'])->name('admin.users.view');
 
-Route::post('users/edit/group/{user}','Admin\UserController@editUserGroup')->name('admin.user.edit.group');
-Route::post('users/edit/info/{user}','Admin\UserController@editBasicInfo')->name('admin.user.edit.info');
+Route::post('users/edit/group/{user}', [UserController::class, 'editUserGroup'])->name('admin.user.edit.group');
+Route::post('users/edit/info/{user}', [UserController::class, 'editBasicInfo'])->name('admin.user.edit.info');
 
-Route::post('users/ban/{user}', 'Admin\UserController@banUser')->name('admin.user.ban');
-Route::get('users/remove/ban/{ban}', 'Admin\UserController@removeBan')->name('admin.ban.remove');
-
+Route::post('users/ban/{user}', [UserController::class, 'banUser'])->name('admin.user.ban');
+Route::get('users/remove/ban/{ban}', [UserController::class, 'removeBan'])->name('admin.ban.remove');
 
 // Log
-Route::get('log','Admin\LogController@showLog')->name('admin.log');
+Route::get('log', [LogController::class, 'showLog'])->name('admin.log');
 
 // Products
-Route::get('products','Admin\ProductController@products')->name('admin.products');
-Route::post('products/query','Admin\ProductController@productsPost')->name('admin.products.query');
-Route::post('product/delete','Admin\ProductController@deleteProduct')->name('admin.product.delete');
-Route::get('product/{id}/{section?}', 'Admin\ProductController@editProduct') -> name('admin.product.edit');
+Route::get('products', [ProductController::class, 'products'])->name('admin.products');
+Route::post('products/query', [ProductController::class, 'productsPost'])->name('admin.products.query');
+Route::post('product/delete', [ProductController::class, 'deleteProduct'])->name('admin.product.delete');
+Route::get('product/{id}/{section?}', [ProductController::class, 'editProduct'])->name('admin.product.edit');
 
-Route::get('purchases', 'Admin\ProductController@purchases')->name('admin.purchases');
-
+Route::get('purchases', [ProductController::class, 'purchases'])->name('admin.purchases');
 
 // Bitmessage
-Route::get('bitmessage','Admin\BitmessageController@show')->name('admin.bitmessage');
+Route::get('bitmessage', [BitmessageController::class, 'show'])->name('admin.bitmessage');
 
 // Disputes
-Route::get('disputes', 'Admin\AdminController@disputes') -> name('admin.disputes');
-Route::get('purchase/{purchase}', 'Admin\AdminController@purchase') -> name('admin.purchase');
+Route::get('disputes', [AdminController::class, 'disputes'])->name('admin.disputes');
+Route::get('purchase/{purchase}', [AdminController::class, 'purchase'])->name('admin.purchase');
 
 // Support tickets
-Route::get('tickets', 'Admin\AdminController@tickets') -> name('admin.tickets');
-Route::get('ticket/{ticket}', 'Admin\AdminController@viewTicket') -> name('admin.tickets.view');
-Route::get('ticket/{ticket}/solve', 'Admin\AdminController@solveTicket') -> name('admin.tickets.solve');
+Route::get('tickets', [AdminController::class, 'tickets'])->name('admin.tickets');
+Route::get('ticket/{ticket}', [AdminController::class, 'viewTicket'])->name('admin.tickets.view');
+Route::get('ticket/{ticket}/solve', [AdminController::class, 'solveTicket'])->name('admin.tickets.solve');
 
 // Vendor purchases
-Route::get('vendor/purchases', 'Admin\AdminController@vendorPurchases') -> name('admin.vendor.purchases');
+Route::get('vendor/purchases', [AdminController::class, 'vendorPurchases'])->name('admin.vendor.purchases');
 
 // Featured products
-
-Route::get('products/featured','Admin\ProductController@featuredProductsShow')->name('admin.featuredproducts.show');
-Route::get('products/featured/mark/{product}','Admin\ProductController@markAsFeatured')->name('admin.product.markfeatured');
-
-Route::post('products/featured/remove','Admin\ProductController@removeFromFeatured')->name('admin.featuredproducts.remove');
+Route::get('products/featured', [ProductController::class, 'featuredProductsShow'])->name('admin.featuredproducts.show');
+Route::get('products/featured/mark/{product}', [ProductController::class, 'markAsFeatured'])->name('admin.product.markfeatured');
+Route::post('products/featured/remove', [ProductController::class, 'removeFromFeatured'])->name('admin.featuredproducts.remove');
 
 // Remove tickets
-
-Route::post('tickets/remove','Admin\AdminController@removeTickets')->name('admin.tickets.remove');
+Route::post('tickets/remove', [AdminController::class, 'removeTickets'])->name('admin.tickets.remove');

@@ -5,7 +5,7 @@ namespace App\Http\Requests\Auth;
 use App\Exceptions\RequestException;
 use App\Marketplace\PGP;
 use App\Rules\Captcha;
-use App\Models\User;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;

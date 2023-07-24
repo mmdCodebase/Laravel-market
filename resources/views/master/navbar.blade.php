@@ -13,24 +13,27 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <ul class="navbar-nav mr-auto">
-                    <!-- @admin -->
-                    <li class="nav-item @isroute('admin') active @endisroute">
-                        <a class="nav-link" href="{{ route('admin.index') }}">Admin Panel</a>
+               <ul class="navbar-nav mr-auto">
+                @admin
+                <li class="nav-item @if(Route::currentRouteName() === 'admin.index') active @endif">
+                    <a class="nav-link" href="{{ route('admin.index') }}">Admin Panel</a>
+                </li>
+                @else 
+                <li></li>
+                @endadmin
+                @moderator
+                <li class="nav-item @if(Route::currentRouteName() === 'admin.index') active @endif">
+                    <a class="nav-link" href="{{ route('admin.index') }}">Moderator panel</a>
+                </li>
+                @else<li></li>
+                @endmoderator
+                @auth
+                    <li class="nav-item @if(Route::currentRouteName() === 'profile.tickets') active @endif">
+                        <a class="nav-link" href="{{ route('profile.tickets') }}">Support</a>
                     </li>
-                   <!--  @endadmin
-                    @moderator -->
-                    <li class="nav-item @isroute('admin') active @endisroute">
-                        <a class="nav-link" href="{{ route('admin.index') }}">Moderator panel</a>
-                    </li>
-                    <!-- @endmoderator -->
-                    @auth
-                        <li class="nav-item @isroute('profile.tickets') active @endisroute">
-                            <a class="nav-link" href="{{ route('profile.tickets') }}">Support</a>
-                        </li>
-                    @endauth
+                @endauth
+            </ul>
 
-                </ul>
 
                 <ul class="navbar-nav">
                     @auth

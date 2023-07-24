@@ -30,8 +30,8 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="newpgp">New PGP key:</label>
-                    <textarea name="newpgp" id="newpgp" style="resize: none" rows="10" class="form-control @error('newpgp', $errors) is-invalid @enderror"></textarea>
-                    @error('newpgp', $errors)
+                    <textarea name="newpgp" id="newpgp" style="resize: none" rows="10" class="form-control @error('newpgp') is-invalid @enderror"></textarea>
+                    @error('newpgp')
                     <div class="invalid-feedback">
                         {{ $errors -> first('newpgp') }}
                     </div>

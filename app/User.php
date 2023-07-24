@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use App\Events\Admin\UserGroupChanged;
 use App\Events\Admin\UserPermissionsUpdated;
@@ -29,6 +29,7 @@ class User extends Authenticatable
     use Vendorable;
     use Adminable;
     use Displayable;
+    use Adminable;
 
     /**
      * Permissions of the User
