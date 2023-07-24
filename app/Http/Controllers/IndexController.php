@@ -68,6 +68,8 @@ class IndexController extends Controller
             'products' => $category->childProducts(),
             'categories' => Category::roots(),
         ]);
+
+        print_r($category);
     }
 
     /**

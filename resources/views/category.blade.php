@@ -17,13 +17,13 @@
                 </div>
             </div>
             <hr>
-
+            
             @if($productsView == 'list')
                 @foreach($products as $product)
                     @include('includes.product.row', ['product' => $product])
                 @endforeach
-            @else
-                @foreach($products->chunk(3) as $chunks)
+            @else             
+            @foreach($products->chunk(3) as $chunks)
                     <div class="row mt-3">
                         @foreach($chunks as $product)
                             <div class="col-md-4 my-md-0 my-2 col-12">

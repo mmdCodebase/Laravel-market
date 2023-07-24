@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use Illuminate\Support\Arr;
 
 class Vendor extends User
 {
@@ -215,7 +216,7 @@ class Vendor extends User
      */
     public function getProfileBg(){
         if ($this->profilebg == null){
-            $this->profilebg = array_random(config('vendor.profile_bgs'));
+            $this->profilebg = Arr::random(config('vendor.profile_bgs'));
             $this->save();
         }
 

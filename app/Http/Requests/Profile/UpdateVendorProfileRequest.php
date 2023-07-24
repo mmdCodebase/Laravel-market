@@ -4,6 +4,7 @@ namespace App\Http\Requests\Profile;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Arr;
 
 class UpdateVendorProfileRequest extends FormRequest
 {
@@ -39,7 +40,7 @@ class UpdateVendorProfileRequest extends FormRequest
         $pofile_bgs = config('vendor.profile_bgs');
         $bg =$this->profilebg;
         if ($bg == null){
-            $bg = array_random($pofile_bgs);
+            $bg = Arr::random($pofile_bgs);
         } else {
             $bg = $pofile_bgs[$bg];
         }

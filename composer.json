@@ -7,7 +7,9 @@
     "require": {
         "php": "^8.0",
         "defuse/php-encryption": "^2.4",
+        "elasticsearch/elasticsearch": "^8.8",
         "fruitcake/laravel-cors": "^2.0.5",
+        "graham-campbell/markdown": "^15.0",
         "gregwar/captcha": "^1.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.0",
@@ -61,7 +63,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

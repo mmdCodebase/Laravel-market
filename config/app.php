@@ -179,6 +179,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\BladeServiceProvider::class,
         App\Providers\PaymentServiceProvider::class,
+        //search
+        Laravel\Scout\ScoutServiceProvider::class,
+        // ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
 
     ],
 
