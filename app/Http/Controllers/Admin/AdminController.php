@@ -77,7 +77,7 @@ class AdminController extends Controller
      */
     public function categories()
     {
-        $this -> categoriesCheck();
+        // $this -> categoriesCheck();
 
         return view('admin.categories',
             [
@@ -85,6 +85,7 @@ class AdminController extends Controller
                 'categories' => Category::nameOrdered(),
             ]
             );
+      
     }
 
     /**
@@ -175,7 +176,7 @@ class AdminController extends Controller
      */
     public function massMessage()
     {
-        $this -> messagesCheck();
+        // $this -> messagesCheck();
 
         return view('admin.messages');
     }
@@ -188,7 +189,7 @@ class AdminController extends Controller
      */
     public function sendMessage(SendMessagesRequest $request)
     {
-        $this -> messagesCheck();
+        // $this -> messagesCheck();
         try{
             $noMessages = $request -> persist();
             session() -> flash('success', "$noMessages messages has been sent!");
@@ -207,7 +208,7 @@ class AdminController extends Controller
      */
     public function disputes()
     {
-        $this -> disputesCheck();
+        // $this -> disputesCheck();
 
         return view('admin.disputes', [
             'allDisputes' => Dispute::paginate(config('marketplace.products_per_page')),
@@ -223,7 +224,7 @@ class AdminController extends Controller
      */
     public function resolveDispute(ResolveDisputeRequest $request, Purchase $purchase)
     {
-        $this -> disputesCheck();
+        // $this -> disputesCheck();
 
         try{
             $purchase -> resolveDispute($request -> winner);

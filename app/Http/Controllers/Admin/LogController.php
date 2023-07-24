@@ -37,7 +37,7 @@ class LogController extends Controller
     }
 
     public function showLog(){
-        $this -> checkLogs();
+        // $this -> checkLogs();
 
         $logs = Cache::remember('logs', $this->logsCacheTimeMinutes, function () {
             return Log::with('user')->orderBy('created_at','desc')->paginate($this->logsPerPage);

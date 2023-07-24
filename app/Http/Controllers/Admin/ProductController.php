@@ -36,7 +36,7 @@ class ProductController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function products(DisplayProductsRequest $request){
-        $this -> checkProducts();
+        // $this -> checkProducts();
 
         $request->persist();
         $products = $request->getProducts();
@@ -45,7 +45,7 @@ class ProductController extends Controller
         ]);
     }
     public function productsPost(Request $request){
-        $this -> checkProducts();
+        // $this -> checkProducts();
 
         return redirect()->route('admin.products',[
             'order_by' => $request->order_by,
@@ -61,7 +61,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function deleteProduct(DeleteProductRequest $request){
-        $this -> checkProducts();
+        // $this -> checkProducts();
 
         try{
             $request->persist();
@@ -171,7 +171,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function removeFromFeatured(RemoveProductFromFeaturedReuqest $request){
-        $this -> checkProducts();
+        // $this -> checkProducts();
 
         try{
             $request->persist();
@@ -184,7 +184,7 @@ class ProductController extends Controller
     
     
     public function markAsFeatured(Product $product){
-        $this -> checkProducts();
+        // $this -> checkProducts();
         $product->featured = 1;
         $product->save();
         return redirect()->back();

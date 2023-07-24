@@ -28,7 +28,7 @@ class UserController extends Controller
     }
 
     public function users(DisplayUsersRequest $request) {
-        $this -> checkGate();
+        //$this -> checkGate();
 
         $request->persist();
         $users = $request->getUsers();
@@ -38,7 +38,7 @@ class UserController extends Controller
     }
 
     public function usersPost(Request $request){
-        $this -> checkGate();
+        //$this -> checkGate();
 
 
         return redirect()->route('admin.users',[
@@ -49,7 +49,7 @@ class UserController extends Controller
     }
 
     public function userView(User $user = null){
-        $this -> checkGate();
+        //$this -> checkGate();
 
         return view('admin.user')->with([
             'user' => $user
@@ -57,7 +57,7 @@ class UserController extends Controller
     }
 
     public function editUserGroup(User $user,ChangeUserGroupRequest $request){
-        $this -> checkGate();
+        //$this -> checkGate();
 
         try{
             $request->persist($user);
@@ -69,7 +69,7 @@ class UserController extends Controller
     }
 
     public function editBasicInfo(User $user,ChangeBasicInfoRequest $request){
-        $this -> checkGate();
+        // //$this -> checkGate();
 
         try{
             $request->persist($user);
@@ -89,7 +89,7 @@ class UserController extends Controller
      */
     public function banUser(User $user, BanUserRequest $request)
     {
-        $this->checkGate();
+        // $this->checkGate();
 
         try{
             throw_if(auth()->user()->id==$user->id, new RequestException('You cannot ban yourself!'));
@@ -115,7 +115,7 @@ class UserController extends Controller
      */
     public function removeBan(Ban $ban)
     {
-        $this -> checkGate();
+        // //$this -> checkGate();
 
         $ban -> delete();
         session()->flash('success', "You have successfully removed ban!");
