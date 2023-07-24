@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -198,8 +199,8 @@ class ProductController extends Controller
 
                 $content = \Storage::disk('public')->get($image->image);
 
-                //$destination =  storage_path('app/public/products').strtolower(str_random(32));
-                $randomName = strtolower(str_random(32));
+                //$destination =  storage_path('app/public/products').strtolower(Str::random(32));
+                $randomName = strtolower(Str::random(32));
                 $name = "products/{$randomName}.jpg";
 
                 \Storage::disk('public')->put($name,$content);

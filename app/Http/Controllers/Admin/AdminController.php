@@ -56,18 +56,18 @@ class AdminController extends Controller
      */
     public function index()
     {
-        // return view('admin.index',
-        //     [
-        //         'total_products' => Product::count(),
-        //         'total_purchases' => Purchase::count(),
-        //         'total_daily_purchases' => Purchase::where('updated_at', '>', Carbon::now()->subDay())->where('state', 'delivered')->count(),
-        //         'total_users' => User::count(),
-        //         'total_vendors' => Vendor::count(),
-        //         'avg_product_price' => Offer::averagePrice(),
-        //         'total_spent' => Purchase::totalSpent(),
-        //         'total_earnings_coin' => Purchase::totalEarningPerCoin()
-        //     ]
-        //     );
+        return view('admin.index',
+            [
+                'total_products' => Product::count(),
+                'total_purchases' => Purchase::count(),
+                'total_daily_purchases' => Purchase::where('updated_at', '>', Carbon::now()->subDay())->where('state', 'delivered')->count(),
+                'total_users' => User::count(),
+                'total_vendors' => Vendor::count(),
+                'avg_product_price' => Offer::averagePrice(),
+                'total_spent' => Purchase::totalSpent(),
+                'total_earnings_coin' => Purchase::totalEarningPerCoin()
+            ]
+            );
     }
 
     /**

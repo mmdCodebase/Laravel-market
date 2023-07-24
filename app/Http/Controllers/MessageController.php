@@ -86,7 +86,7 @@ class MessageController extends ProfileController
     {
         $otherUser = User::where('username', $request -> username) -> first();
 
-        $newOldConversation = Conversation::findWithUsersOrCreate(auth() -> user(), $otherUser);
+        $newOldConversation = findWithUsersOrCreate(auth() -> user(), $otherUser);
 
 
         // Redirect to new message via GET request
