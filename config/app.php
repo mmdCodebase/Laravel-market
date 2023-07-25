@@ -180,9 +180,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\BladeServiceProvider::class,
         App\Providers\PaymentServiceProvider::class,
-        //search
         Laravel\Scout\ScoutServiceProvider::class,
-        // ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
 
     ],
 
@@ -199,6 +197,6 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
-    ])->toArray(), 
+    ])->toArray(),
 
 ];

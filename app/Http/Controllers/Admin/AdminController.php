@@ -77,7 +77,7 @@ class AdminController extends Controller
      */
     public function categories()
     {
-        // //$this -> categoriesCheck();
+        // $this -> categoriesCheck();
 
         return view('admin.categories',
             [
@@ -96,7 +96,7 @@ class AdminController extends Controller
      */
     public function newCategory(NewCategoryRequest $request)
     {
-        //$this -> categoriesCheck();
+        // $this -> categoriesCheck();
         try{
             $request -> persist();
             session() -> flash('success', 'You have added new category!');
@@ -117,7 +117,7 @@ class AdminController extends Controller
     public function removeCategory($id)
     {
         try {
-            //$this -> categoriesCheck();
+            // $this -> categoriesCheck();
             $catToDelete = Category::findOrFail($id);
             $catToDelete -> delete();
 
@@ -137,7 +137,7 @@ class AdminController extends Controller
      */
     public function editCategoryShow($id)
     {
-        //$this -> categoriesCheck();
+        // $this -> categoriesCheck();
         $categoryToShow = Category::findOrFail($id);
 
 
@@ -155,7 +155,7 @@ class AdminController extends Controller
      */
     public function editCategory($id, NewCategoryRequest $request)
     {
-        //$this -> categoriesCheck();
+        // $this -> categoriesCheck();
 
         try{
             $request -> persist($id);

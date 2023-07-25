@@ -55,8 +55,8 @@ trait Vendorable
      */
     public function becomeVendor($address = null)
     {
-        // if(!$this -> hasPGP())
-        //     throw new RequestException('You can\'t become vendor if you don\'t have PGP key!');
+        if(!$this -> hasPGP())
+            throw new RequestException('You can\'t become vendor if you don\'t have PGP key!');
 
         // Vendor must have addresses of each coin
 //        foreach (array_keys(config('coins.coin_list')) as $coinName){
@@ -65,7 +65,7 @@ trait Vendorable
 //                throw new RedirectException("You need to have '" . strtoupper($coinName) . "' address in your account to become vendor!", route('profile.index'));
 //        }
         // check if the user deposited addres
-        // throw_unless($this -> depositedEngouh(), new RequestException("You must deposit enough funds to the one address!"));
+        throw_unless($this -> depositedEngouh(), new RequestException("You must deposit enough funds to the one address!"));
 
         try{
             DB::beginTransaction();

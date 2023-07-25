@@ -197,10 +197,9 @@
                                            max="{{ $product -> quantity }}"
                                            class="@if($errors -> has('amount')) is-invalid @endif form-control form-control-sm"
                                            placeholder="Amount of {{ Str::plural($product -> mesure) }}"/>
-                                
-                                @endif
                                 <br>
-                                <div class="col-md-12">
+                                @endif
+                                <div class="col-md-14">
                                     <button class="btn btn-sm btn-block mb-2 btn-primary"><i class="fas fa-plus mr-2"></i>Add to
                                         cart
                                     </button>

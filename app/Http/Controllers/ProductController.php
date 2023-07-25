@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Illuminate\Support\Str;
+use League\CommonMark\CommonMarkConverter;
 use Illuminate\Support\Facades\Config;
 
 class ProductController extends Controller

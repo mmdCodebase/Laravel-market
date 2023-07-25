@@ -35,7 +35,7 @@
         <div class="form-group">
             @if(session()->has('bitmessage_confirmation'))
                 <button type="submit" class="btn btn-outline-secondary">Resend confirmation message</button>
-                <p class="text-muted">You can request new confirmation message every {{config('bitmessage.confirmation_msg_frequency')}} {{str_plural('second',config('bitmessage.confirmation_msg_frequency'))}}</p>
+                <p class="text-muted">You can request new confirmation message every {{config('bitmessage.confirmation_msg_frequency')}} {{Str::plural('second',config('bitmessage.confirmation_msg_frequency'))}}</p>
             @else
                 <button type="submit" class="btn btn-outline-primary">Send confirmation message</button>
             @endif

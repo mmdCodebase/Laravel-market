@@ -34,6 +34,19 @@ return [
     */
 
     'connections' => [
+        
+        'elasticsearch' => [
+            'driver' => 'elasticsearch',
+            'hosts' => [
+                [
+                    'host' => env('ELASTICSEARCH_HOST', 'localhost'),
+                    'port' => env('ELASTICSEARCH_PORT', 9200),
+                    'scheme' => env('ELASTICSEARCH_SCHEME', 'http'),
+                ],
+                // Add more hosts if you have a cluster setup
+            ],
+        ],
+    
 
         'sqlite' => [
             'driver' => 'sqlite',
@@ -90,22 +103,6 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-
-        'connections' => [
-            // ...
-            'elasticsearch' => [
-                'driver' => 'elasticsearch',
-                'hosts' => [
-                    [
-                        'host' => env('ELASTICSEARCH_HOST', 'localhost'),
-                        'port' => env('ELASTICSEARCH_PORT', 9200),
-                        'scheme' => env('ELASTICSEARCH_SCHEME', 'http'),
-                    ],
-                    // Add more hosts if you have a cluster setup
-                ],
-            ],
-        ],
-        
 
     ],
 

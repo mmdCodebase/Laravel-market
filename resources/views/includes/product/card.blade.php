@@ -8,5 +8,4 @@
         </p>
         <a href="{{ route('product.show', $product) }}" class="btn btn-primary d-block">Buy now</a>
     </div>
-    
-</div>      
+</div>

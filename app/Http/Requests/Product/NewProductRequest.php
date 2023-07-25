@@ -36,7 +36,7 @@ class NewProductRequest extends FormRequest
     {
         // doesnt have basic product details
         if (!session() -> has('product_adding'))
-            throw new RedirectException('You didn\'t define basic product details!', route('profile.vendor.product.add'));
+            throw new RedirectException('You didn\'t define basic product details!', route('profile.'));
         // doesnt have offers
         if (!session() -> has('product_offers') ||  optional(session('product_offers')) -> isEmpty() || empty(session('product_offers')))
             throw new RedirectException('You don\'t have your offers specified!', route('profile.vendor.product.offers'));

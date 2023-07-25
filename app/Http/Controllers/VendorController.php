@@ -102,7 +102,7 @@ class VendorController extends Controller
             session() -> flash('errormessage', 'Something went wrong try again!');
         }
 
-
+           
         return redirect() -> back();
     }
 
