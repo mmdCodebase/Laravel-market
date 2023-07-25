@@ -78,8 +78,8 @@
                                 <ul>
                                     @foreach($product -> offers as $offer)
                                         <li>
-                                            <strong>@include('includes.currency', ['usdValue' => $offer -> dollars])</strong> per {{ str_plural($product -> mesure, 1) }},
-                                            for at least {{ $offer -> min_quantity }} {{ str_plural('product', $offer -> min_quantity) }}
+                                            <strong>@include('includes.currency', ['usdValue' => $offer -> dollars])</strong> per {{ Str::plural($product -> mesure, 1) }},
+                                            for at least {{ $offer -> min_quantity }} {{ Str::plural('product', $offer -> min_quantity) }}
                                         </li>
                                     @endforeach
                                 </ul>
@@ -112,8 +112,8 @@
                             @if(!$product -> isUnlimited())
                             <td class="text-right text-muted">Left/Sold</td>
                             <td>
-                                <span class="badge badge-light">{{ $product -> quantity }} {{ str_plural($product -> mesure, $product -> quantity) }}</span>/
-                                <span class="badge badge-light">{{ $product -> orders }} {{ str_plural($product -> mesure, $product -> orders) }} </span>
+                                <span class="badge badge-light">{{ $product -> quantity }} {{ Str::plural($product -> mesure, $product -> quantity) }}</span>/
+                                <span class="badge badge-light">{{ $product -> orders }} {{ Str::plural($product -> mesure, $product -> orders) }} </span>
                             </td>
                             @endif
                         </tr>
@@ -189,18 +189,19 @@
                                         value="1"
                                         max="{{ $product -> quantity }}"
                                         class="@if($errors -> has('amount')) is-invalid @endif form-control form-control-sm"
-                                        placeholder="Amount of {{ str_plural($product -> mesure) }}"/>
+                                        placeholder="Amount of {{ Str::plural($product -> mesure) }}"/>
                                 @else
                                 <div class="col-md-5">
                                     <input type="number" min="1" name="amount" id="amount"
                                            value="1"
                                            max="{{ $product -> quantity }}"
                                            class="@if($errors -> has('amount')) is-invalid @endif form-control form-control-sm"
-                                           placeholder="Amount of {{ str_plural($product -> mesure) }}"/>
-                                />
+                                           placeholder="Amount of {{ Str::plural($product -> mesure) }}"/>
+                                
                                 @endif
-                                <div class="col-md-7">
-                                    <button class="btn btn-sm btn-block mb-2 btn-primary"><i class="fas fa-plus mr-2"></i>Add to
+                                <br>
+                                <div class="col-md-14">
+                                    <button class="btn btn-sm btn-block mb- btn-primary"><i class="fas fa-plus mr-2"></i>Add to
                                         cart
                                     </button>
                                     @auth

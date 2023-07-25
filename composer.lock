@@ -866,8 +866,6 @@
             "keywords": [
                 "Graham Campbell",
                 "GrahamCampbell",
-                "Laravel Markdown",
-                "Laravel-Markdown",
                 "common mark",
                 "commonmark",
                 "framework",
@@ -9138,5 +9136,5 @@
         "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
