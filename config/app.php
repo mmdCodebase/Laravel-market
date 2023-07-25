@@ -163,6 +163,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -197,7 +198,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // ...
-    ])->toArray(),
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
+    ])->toArray(), 
 
 ];

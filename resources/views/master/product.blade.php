@@ -200,8 +200,8 @@
                                 
                                 @endif
                                 <br>
-                                <div class="col-md-14">
-                                    <button class="btn btn-sm btn-block mb- btn-primary"><i class="fas fa-plus mr-2"></i>Add to
+                                <div class="col-md-12">
+                                    <button class="btn btn-sm btn-block mb-2 btn-primary"><i class="fas fa-plus mr-2"></i>Add to
                                         cart
                                     </button>
                                     @auth
